@@ -1,7 +1,7 @@
 {
   const el = document.querySelector('.content')
 
-  const score = [1, 2, 3]
+  const score = [80, 90, 40, 70]
   console.log(`Score: ${score}`)
 
   for (let i = 0; i < score.length ; i++) {
