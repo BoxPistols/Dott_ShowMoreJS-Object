@@ -1,11 +1,19 @@
+'use strict'
+
 {
   const el = document.querySelector(".content");
   // el.insertAdjacentHTML("beforeend", `<p>テスト：テスト${null}`);
+
+  const others = {
+    r: 111,
+    color: 'red'
+  };
 
   const point = {
     x: 100,
     y: 180,
     n: 120,
+    ...others,
   };
 
   point.x = 120;
@@ -19,9 +27,10 @@
   for (var i = 0; i < Object.keys(point).length; i++) {
     el.insertAdjacentHTML(
       "beforeEnd",
-      `<p>Object =
+      `<p>Obj：
       ${Object.keys(point)[i]}:
       ${Object.values(point)[i]}`
     );
   }
+
 }
