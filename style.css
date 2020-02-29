@@ -24,6 +24,19 @@ body {
   border-radius: 8px;
 }
 
+.fx {
+  display: flex;
+  background: rgba(200, 212, 212, 0.38);
+  margin-bottom: 4px;
+  padding: 4px 8px;
+}
+.fx p {
+  min-width: 100px;
+  max-width: 140px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
 li {
   list-style-type: square;
 }
