@@ -1,26 +1,15 @@
 {
   const el = document.querySelector(".content");
+  el.insertAdjacentHTML("beforeend", `<p>テスト：テスト${null}`);
 
-  const otherScores = [22, 33, 44, 55]; // 他の配列追加
-  const scores = [80, 90, 40, 70]; // 末尾に配列追加
+  const numbers = [1, 4, 7, 8, 10];
 
-  scores.forEach((x, index) => {
-    el.insertAdjacentHTML("beforeend", `<p> 評価：${index + 1} = ${x}</p>`);
+  const evenNum = numbers.filter(num => {
+    if (num % 2 === 0) {
+      return true;
+    } else return false;
   });
-  // for (let i = 0; i < scores.length; i++) {
-  //   el.insertAdjacentHTML("beforeend", `<li>Score ${i + 1}: ${scores[i]}</li>`);
-  // }
-  //
-  // const upDateScores = scores.map((s) => {
-  //   return s * 1.5
-  // })
 
-  const upDateScores = scores.map(s => s + 20);
+  el.insertAdjacentHTML("beforeend", `<h2>even：${evenNum}</h2>`);
 
-  console.log(upDateScores);
-  el.insertAdjacentHTML("beforeend", `<p>upDateScores：${upDateScores}`);
-
-  const prices = [180, 190, 200];
-  const updatedPrices = prices.map(price => price + 20);
-  console.log(updatedPrices);
 }
