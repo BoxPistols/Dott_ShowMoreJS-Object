@@ -2,28 +2,52 @@
 
 {
   const el = document.querySelector(".content");
-  // el.insertAdjacentHTML("beforeend", `<p>テスト：テスト${null}`);
+  // el.insertAdjacentHTML("beforeend", `<p>テスト： ${null}</p>`);
 
-  const str = "吉田かおり"
-  // 文字数： str.length
-  // 部分文字列： str.substring(2, 4)
-  let end = str.length
-  el.insertAdjacentHTML("beforeend", `<p>名前：
-${str.substring(0, end - 1)}`);
+  /*------ 数値計算 --------*/
+
+  const scores = [10, 3, 9];
+
+  // 形容の変数を置く
+  let sum = 0;
+
+  scores.forEach(score => {
+    sum += score;
+  });
+
+  el.insertAdjacentHTML(
+    "beforeend",
+    `<p>forEach 計算：${scores.length}件：　合計 ${sum}</p>`
+  );
+
+  const avg = sum / scores.length;
+
+  el.insertAdjacentHTML("beforeend", `<p>forEach 平均：${avg.toFixed(2)}</p>`);
+  /*
+    少数点 切り捨て Math.floor(avg)
+    少数点 切り上げ Math.ceil(avg)
+    少数点 四捨五入 Math.round(avg)
+    少数点 num桁表示 avg.Math.toFixed(3)
+  */
+
+  /*
+  console.log(Math.random()); 0以上1未満
+
+  0, 1, 2
+  Math.floor(Math.random() * 3)
+
+  0, ..., n
+  Math.floor(Math.random() * (n + 1))
 
 
-/*------ join() split() --------*/
-  const d = [2019, 11, 14];
-  // 配列の連結UI
-  el.insertAdjacentHTML("beforeend", `<p>日時： ${d} </p>`);
-  el.insertAdjacentHTML("beforeend", `<p>日時 join('/')： ${d.join('/')} </p>`);
-  el.insertAdjacentHTML("beforeend", `<p>日時 join('')： ${d.join('')} </p>`);
+  min, ..., max
+  Math.floor(Math.random() * (max + 1 - min)) + min
+  el.insertAdjacentHTML("beforeend", `<h3>ランダム</h3>`);
+  console.log(Math.floor(Math.random() * 6) + 1);
+*/
 
-  const t = '17:08:24';
-  el.insertAdjacentHTML("beforeend", `<p>時間： ${t} </p>`);
-  el.insertAdjacentHTML("beforeend", `<p>時間 split(':')： ${t.split(':')} </p>`);
-
-  const [hour, minute, second] = t.split(':');
-  el.insertAdjacentHTML("beforeend", `<p>const [hour, minute, second] = t.split(':');</p><p>時間： ${hour}時${minute}分${second}秒 </p>`);
-
+  el.insertAdjacentHTML(
+    "beforeend",
+    `<h3>${Math.floor(Math.random() * 6) + 1}</h3>`
+  );
 }
