@@ -39,7 +39,6 @@
   0, ..., n
   Math.floor(Math.random() * (n + 1))
 
-
   min, ..., max
   Math.floor(Math.random() * (max + 1 - min)) + min
   el.insertAdjacentHTML("beforeend", `<h3>ランダム</h3>`);
@@ -48,6 +47,6 @@
 
   el.insertAdjacentHTML(
     "beforeend",
-    `<h3>${Math.floor(Math.random() * 6) + 1}</h3>`
+    `<h3>サイコロ ランダム：　${Math.floor(Math.random() * 6) + 1}</h3>`
   );
 }
