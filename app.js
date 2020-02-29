@@ -4,38 +4,26 @@
   const el = document.querySelector(".content");
   // el.insertAdjacentHTML("beforeend", `<p>テスト：テスト${null}`);
 
-  const others = {
-    r: 111,
-    color: "red"
-  };
+  const str = "吉田かおり"
+  // 文字数： str.length
+  // 部分文字列： str.substring(2, 4)
+  let end = str.length
+  el.insertAdjacentHTML("beforeend", `<p>名前：
+${str.substring(0, end - 1)}`);
 
-  const point = {
-    x: 100,
-    y: 180,
-    n: 120,
-    ...others
-  };
 
-  point.x = 120;
-  point.z = 90;
+/*------ join() split() --------*/
+  const d = [2019, 11, 14];
+  // 配列の連結UI
+  el.insertAdjacentHTML("beforeend", `<p>日時： ${d} </p>`);
+  el.insertAdjacentHTML("beforeend", `<p>日時 join('/')： ${d.join('/')} </p>`);
+  el.insertAdjacentHTML("beforeend", `<p>日時 join('')： ${d.join('')} </p>`);
 
-  // delete point.z
-  // console.log(point)
+  const t = '17:08:24';
+  el.insertAdjacentHTML("beforeend", `<p>時間： ${t} </p>`);
+  el.insertAdjacentHTML("beforeend", `<p>時間 split(':')： ${t.split(':')} </p>`);
 
-  el.insertAdjacentHTML("beforeEnd", `<p>キーからプロパティを取得：${point.z}`);
-
-  // for (var i = 0; i < Object.keys(point).length; i++) {
-  //   el.insertAdjacentHTML(
-  //     "beforeEnd",
-  //     `<p>Obj：
-  //     ${Object.keys(point)[i]}:
-  //     ${Object.values(point)[i]}`
-  //   );
-  // }
-
-  const keys = Object.keys(point);
-  keys.forEach(key => {
-    el.insertAdjacentHTML("beforeEnd", `<div class="fx"><p>Key：${key}</p> <p>Value：${point[key]}</p></div>`);
-  });
+  const [hour, minute, second] = t.split(':');
+  el.insertAdjacentHTML("beforeend", `<p>const [hour, minute, second] = t.split(':');</p><p>時間： ${hour}時${minute}分${second}秒 </p>`);
 
 }
