@@ -28,7 +28,13 @@ li {
   list-style-type: square;
 }
 
+p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
 h1, h2, h3, h4, h5 {
+  color: darkorange;
   font-weight: 400;
 }
 
