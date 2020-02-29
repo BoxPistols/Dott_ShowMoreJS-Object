@@ -1,21 +1,29 @@
 {
-  const el = document.querySelector('.content')
+  const el = document.querySelector(".content");
 
-  const otherScores = [22, 33, 44, 55] // 他の配列追加
-  const scores = [80, 90, 40, 70, ...otherScores] // 末尾に配列追加
-  console.log(`Score: ${scores}`)
-  // scores.splice(0,1,120)
-  // scores.push(111, 999)
-  // scores.shift() // 単一
+  const otherScores = [22, 33, 44, 55]; // 他の配列追加
+  const scores = [80, 90, 40, 70, ...otherScores]; // 末尾に配列追加
 
-  for (let i = 0; i < scores.length ; i++) {
-    el.insertAdjacentHTML('beforeend', (`<h2>Score ${i+1}: ${scores[i]}</h2>`) )
+  for (let i = 0; i < scores.length; i++) {
+    el.insertAdjacentHTML("beforeend", `<li>Score ${i + 1}: ${scores[i]}</li>`);
   }
-
   // 計算用の関数
-  function sum(a, b, c, d){
-    el.insertAdjacentHTML('beforeend', (`<h2> 合計： ${a + b + c + d}</h2>`) )
+  function sum(x, y, z, a) {
+    el.insertAdjacentHTML("beforeend", `<h3> 合計： ${x + y + z + a}</h3>`);
   }
+  sum(...scores);
 
-  sum(...otherScores);
+
+  const [a,b, ...others] = scores
+  el.insertAdjacentHTML("beforeend", `<h3> 分割代入： ${a} ${b} ${others}</h3>`);
+
+  // scores.forEach(function(x) {
+  //   document.write(x);
+  // });
+  //
+  // const a = [1, 2, 3];
+  // a.forEach((value, i) => {
+  //   document.write(i, value);
+  // });
+
 }
